@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WiFi Settings - Router Admin</title>
+    <link rel="stylesheet" href="../router-gui/css/sidebar.css">
+</head>
+<body>
+    <script src="../router-gui/js/sidebar.js"></script>
+
+    <div class="main-content">
+        <h1>Wireless 2.4GHz Settings</h1>
+        <table class="info-table">
+            <tr>
+                <th>Wireless Enable</th>
+                <td><input type="checkbox" checked> Enable</td>
+            </tr>
+            <tr>
+                <th>SSID</th>
+                <td><input type="text" value="S136AN_2.4G"></td>
+            </tr>
+            <tr>
+                <th>Channel</th>
+                <td>
+                    <select>
+                        <option>Auto</option>
+                        <option>1</option>
+                        <option>6</option>
+                        <option>11</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>Mode</th>
+                <td>802.11 b/g/n</td>
+            </tr>
+        </table>
+        <br>
+        <button style="padding: 2px 1px; background: #efefef; border: 1px solid #999; cursor: pointer;">Save Setting</button>
+    </div>
+
+    <script src="../router-gui/js/navbar.js"></script>
+</body>
+</html>

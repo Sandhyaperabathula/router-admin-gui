@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WPS Settings - Router Admin</title>
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' 'unsafe-eval'; script-src * 'unsafe-inline' 'unsafe-eval'; connect-src * 'unsafe-inline'; img-src * data: blob: 'unsafe-inline'; style-src * 'unsafe-inline';">
+    <link rel="stylesheet" href="../../css/sidebar.css">
+</head>
+<body>
+    <script src="../../js/sidebar.js"></script>
+    <script src="../../js/api-client.js"></script>
+
+    <div class="main-content">
+        <h1>WPS Settings</h1>
+        <table class="info-table">
+            <tr>
+                <th>WPS Status</th>
+                <td><input type="checkbox" id="wpsStatus" checked> Enabled</td>
+            </tr>
+            <tr>
+                <th>Current PIN</th>
+                <td id="currentPin">12345678</td>
+            </tr>
+            <tr>
+                <th>Configured</th>
+                <td id="wpsConfigured">Yes</td>
+            </tr>
+        </table>
+        <br>
+        <button id="saveWps" style="padding: 10px 30px; background: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: bold;">Save Settings</button>
+        <button id="generatePin" style="padding: 10px 20px; background: #efefef; border: 1px solid #999; cursor: pointer; margin-left: 10px;">Generate New PIN</button>
+
+    <script>
+    async function loadSettings() {
+        try {
+            const config = await ApiClient.fetch("load_wps");
+            if (config.wpsStatus !== undefined) document.getElementById("wpsStatus").checked = config.wpsStatus === "true";
+            if (config.currentPin) document.getElementById("currentPin").textContent = config.currentPin;
+            if (config.wpsConfigured) document.getElementById("wpsConfigured").textContent = config.wpsConfigured;
+        } catch (error) {
+            console.error("Error loading settings:", error);
+        }
+    }
+
+    async function saveSettings() {
+        const formData = new URLSearchParams();
+        formData.append("action", "save_wps");
+        formData.append("wpsStatus", document.getElementById("wpsStatus").checked);
+        formData.append("currentPin", document.getElementById("currentPin").textContent);
+        formData.append("wpsConfigured", document.getElementById("wpsConfigured").textContent);
+
+        const result = await ApiClient.fetch("save_wps", "POST", formData);
+        if (result.status === "success") {
+            ApiClient.showNotification(result.message);
+        } else {
+            ApiClient.showNotification(result.message || "Error saving settings", true);
+        }
+    }
+
+    document.getElementById("generatePin").addEventListener("click", function() {
+        const newPin = Math.floor(10000000 + Math.random() * 90000000);
+        document.getElementById("currentPin").textContent = newPin;
+    });
+
+    document.getElementById("saveWps").addEventListener("click", saveSettings);
+    window.addEventListener("DOMContentLoaded", loadSettings);
+    </script>
+    </div>
+
+    <script src="../../js/navbar.js"></script>
+</body>
+</html>

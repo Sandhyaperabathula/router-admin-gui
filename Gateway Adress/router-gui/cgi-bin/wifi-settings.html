@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WiFi Settings - Router Admin</title>
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' 'unsafe-eval'; script-src * 'unsafe-inline' 'unsafe-eval'; connect-src * 'unsafe-inline'; img-src * data: blob: 'unsafe-inline'; style-src * 'unsafe-inline';">
+    <link rel="stylesheet" href="../css/sidebar.css">
+    <link rel="stylesheet" href="../css/wifi-2.4ghz.css">
+    
+</head>
+<body>
+    <script src="../js/sidebar.js"></script>
+    <script src="../js/navbar.js"></script>
+    <script src="../js/api-client.js"></script>
+
+    <div class="main-content">
+
+    <div class="section-title">
+        Access Point Settings
+    </div>
+
+    <div class="wifi-form-container">
+
+        <div class="form-row">
+            <label>Access Point :</label>
+
+            <input type="radio" name="ap" id="ap_activated" value="activated" checked>
+            <span>Activated</span>
+
+            <input type="radio" name="ap" id="ap_deactivated" value="deactivated">
+            <span>Deactivated</span>
+        </div>
+
+        <div class="form-row">
+            <label>Country Code :</label>
+
+            <select id="countryCode">
+                <option value="INDIA">INDIA</option>
+                <option value="USA">USA</option>
+                <option value="UK">UK</option>
+            </select>
+        </div>
+
+        <div class="form-row">
+            <label>Channel :</label>
+
+            <select id="channelSelect">
+                <option value="Auto-Select">Auto-Select</option>
+                <option value="1">1</option>
+                <option value="6">6</option>
+                <option value="11">11</option>
+            </select>
+
+            <span class="current-channel">
+                Current Channel :
+            </span>
+
+            <input type="text" id="currentChannel" value="1" readonly>
+        </div>
+
+        <div class="form-row channel-row">
+            <label>Channel :</label>
+
+            <div class="channel-list" id="channelList">
+
+                <label><input type="checkbox" name="channels" value="1" checked>1</label>
+                <label><input type="checkbox" name="channels" value="2">2</label>
+                <label><input type="checkbox" name="channels" value="3">3</label>
+                <label><input type="checkbox" name="channels" value="4">4</label>
+                <label><input type="checkbox" name="channels" value="5">5</label>
+                <label><input type="checkbox" name="channels" value="6" checked>6</label>
+                <label><input type="checkbox" name="channels" value="7">7</label>
+                <label><input type="checkbox" name="channels" value="8">8</label>
+                <label><input type="checkbox" name="channels" value="9">9</label>
+                <label><input type="checkbox" name="channels" value="10">10</label>
+                <label><input type="checkbox" name="channels" value="11" checked>11</label>
+                <label><input type="checkbox" name="channels" value="12">12</label>
+                <label><input type="checkbox" name="channels" value="13">13</label>
+
+            </div>
+        </div>
+
+        <div class="form-row">
+            <label>Beacon Interval :</label>
+
+            <input type="text" id="beaconInterval" value="100">
+
+            <span>(range: 20~1000)</span>
+        </div>
+
+        <div class="form-row">
+            <label>RTS/CTS Threshold :</label>
+
+            <input type="text" id="rtsThreshold" value="2347">
+
+            <span>(range: 1~2347)</span>
+        </div>
+
+        <div class="form-row">
+            <label>Fragmentation Threshold :</label>
+
+            <input type="text" id="fragThreshold" value="2346">
+
+            <span>(range: 256~2346)</span>
+        </div>
+
+        <div class="form-row">
+            <label>DTIM :</label>
+
+            <input type="text" id="dtim" value="1">
+
+            <span>(range: 1~255)</span>
+        </div>
+
+        <div class="form-row">
+            <label>Wireless Mode :</label>
+
+            <select id="wirelessMode">
+                <option value="802.11b+g+n">802.11b+g+n</option>
+                <option value="802.11b">802.11b</option>
+                <option value="802.11g">802.11g</option>
+                <option value="802.11n">802.11n</option>
+            </select>
+        </div>
+
+        <div class="form-row">
+            <label>BG Protection Mode :</label>
+
+            <select id="bgMode">
+                <option value="Auto">Auto</option>
+                <option value="On">On</option>
+                <option value="Off">Off</option>
+            </select>
+        </div>
+
+        <div class="form-row">
+            <label>TX Power(%) :</label>
+
+            <input type="text" id="txPower" value="100">
+
+            <span>(range 1 - 100, default 100)</span>
+        </div>
+
+    </div>
+
+
+
+ <div class="section-title">
+       11n Settings
+    </div>
+
+    <div class="wifi-form-container">
+
+       
+
+        <div class="form-row">
+            <label>Channel Bandwidth :</label>
+
+            <select id="channelBandwidth">
+                <option value="20 MHz">20 MHz</option>
+                <option value="40 MHz">40 MHz</option>
+                <option value="80 MHz">80 MHz</option>
+            </select>
+        </div>
+
+        <div class="form-row">
+            <label>Guard Interval :</label>
+
+            <select id="guardInterval">
+                <option value="800 nsec">800 nsec</option>
+                <option value="AUTO">AUTO</option>
+            </select>
+        </div>
+
+        <div class="form-row" style="justify-content: flex-end; margin-top: 20px;">
+
+    <div style="width:100%; text-align:left; margin-top:20px;">
+    <button id="saveWifi"
+    style="
+    padding:10px 30px;
+    background:#007bff;
+    color:white;
+    border:none;
+    border-radius:4px;
+    cursor:pointer;
+    font-weight:bold;
+    margin-left:550px;
+    justify-content:center;
+    ">
+    Save Setting
+    </button>
+</div>
+
+        </div>
+
+        
+</div>
+    </div>
+
+
+    <script src="../../js/navbar.js"></script>
+    <script src="../../js/sidebar.js"></script>
+</body>
+<script>
+
+// Function to load settings from backend
+async function loadSettings() {
+    try {
+        const config = await ApiClient.fetch("load_wifi");
+        
+        if (!config || Object.keys(config).length === 0) return;
+
+        // Populate fields
+        if (config.ap) {
+            const apRadio = document.getElementById(config.ap === "activated" ? "ap_activated" : "ap_deactivated");
+            if (apRadio) apRadio.checked = true;
+        }
+        if (config.countryCode) document.getElementById("countryCode").value = config.countryCode;
+        if (config.channelSelect) document.getElementById("channelSelect").value = config.channelSelect;
+        if (config.currentChannel) document.getElementById("currentChannel").value = config.currentChannel;
+        if (config.beaconInterval) document.getElementById("beaconInterval").value = config.beaconInterval;
+        if (config.rtsThreshold) document.getElementById("rtsThreshold").value = config.rtsThreshold;
+        if (config.fragThreshold) document.getElementById("fragThreshold").value = config.fragThreshold;
+        if (config.dtim) document.getElementById("dtim").value = config.dtim;
+        if (config.wirelessMode) document.getElementById("wirelessMode").value = config.wirelessMode;
+        if (config.bgMode) document.getElementById("bgMode").value = config.bgMode;
+        if (config.txPower) document.getElementById("txPower").value = config.txPower;
+        if (config.channelBandwidth) document.getElementById("channelBandwidth").value = config.channelBandwidth;
+        if (config.guardInterval) document.getElementById("guardInterval").value = config.guardInterval;
+
+        // Handle channels checkboxes
+        if (config.channels) {
+            const selectedChannels = config.channels.split(",");
+            document.querySelectorAll('input[name="channels"]').forEach(cb => {
+                cb.checked = selectedChannels.includes(cb.value);
+            });
+        }
+    } catch (error) {
+        console.error("Error loading settings:", error);
+    }
+}
+
+// Function to save settings to backend
+async function saveSettings() {
+    const formData = new URLSearchParams();
+    formData.append("action", "save_wifi");
+    
+    // Collect radio values
+    const selectedAp = document.querySelector('input[name="ap"]:checked');
+    if (selectedAp) formData.append("ap", selectedAp.value);
+    
+    // Collect select and input values
+    const fields = [
+        "countryCode", "channelSelect", "currentChannel", "beaconInterval", 
+        "rtsThreshold", "fragThreshold", "dtim", "wirelessMode", 
+        "bgMode", "txPower", "channelBandwidth", "guardInterval"
+    ];
+    
+    fields.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) formData.append(id, el.value);
+    });
+
+    // Collect checkboxes
+    const channels = Array.from(document.querySelectorAll('input[name="channels"]:checked'))
+        .map(cb => cb.value)
+        .join(",");
+    formData.append("channels", channels);
+
+    const result = await ApiClient.fetch("save_wifi", "POST", formData);
+    if (result.status === "success") {
+        ApiClient.showNotification(result.message);
+    } else {
+        ApiClient.showNotification(result.message || "Error saving settings", true);
+    }
+}
+
+document.getElementById("channelSelect").addEventListener("change", function(){
+    const selectedValue = this.value;
+    if(selectedValue !== "Auto-Select"){
+        document.getElementById("currentChannel").value = selectedValue;
+    }
+});
+
+document.getElementById("saveWifi").addEventListener("click", saveSettings);
+
+// Load settings on page load
+window.addEventListener("DOMContentLoaded", loadSettings);
+
+</script>
+</html>

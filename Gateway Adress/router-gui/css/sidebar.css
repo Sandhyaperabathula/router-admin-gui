@@ -1,0 +1,167 @@
+/* Sidebar Container */
+.sidebar {
+    width: 220px;
+    height: calc(100vh - 56px);
+    background-color: #efefef;
+    border-right: 1px solid #999;
+    position: fixed;
+    left: 0;
+    top: 56px;
+    overflow-y: auto;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    z-index: 999;
+}
+
+/* Top Logo Area */
+.logo-area {
+    background-color: #dfdfdf;
+    padding: 10px;
+    border-bottom: 1px solid #999;
+    text-align: center;
+    font-weight: bold;
+    font-size: 14px;
+    color: #333;
+}
+
+/* Menu Styles */
+.menu-tree {
+    list-style: none;
+    padding: 5px 0;
+    margin: 0;
+}
+
+.menu-item {
+    position: relative;
+    padding-left: 10px;
+}
+
+/* Parent Menu Link */
+.menu-link {
+    display: flex;
+    align-items: center;
+    padding: 2px 5px;
+    text-decoration: none;
+    color: #000;
+    font-size: 11px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.menu-link:hover {
+    background-color: #e0e0e0;
+}
+
+.parent-item > .menu-link {
+    font-weight: bold;
+}
+
+/* Expand/Collapse Icon */
+.toggle-icon {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    line-height: 8px;
+    text-align: center;
+    border: 1px solid #666;
+    background: #fff;
+    margin-right: 5px;
+    font-family: monospace;
+    font-size: 9px;
+    font-weight: normal;
+    flex-shrink: 0;
+}
+
+/* Submenu Container */
+.submenu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: none; /* Hidden by default */
+    position: relative;
+}
+
+/* Dotted Vertical Line */
+.submenu::before {
+    content: "";
+    position: absolute;
+    left: 15px;
+    top: 0;
+    bottom: 0;
+    border-left: 1px dotted #666;
+}
+
+/* Submenu Items */
+.submenu-item {
+    position: relative;
+    padding-left: 25px;
+}
+
+/* Horizontal Dotted Connector */
+.submenu-item::before {
+    content: "";
+    position: absolute;
+    left: 15px;
+    top: 10px;
+    width: 10px;
+    border-top: 1px dotted #666;
+}
+
+/* Hide the bottom part of the vertical line for the last item */
+.submenu-item:last-child::after {
+    content: "";
+    position: absolute;
+    left: 15px;
+    top: 10px;
+    bottom: 0;
+    width: 1px;
+    background-color: #efefef; /* Same as sidebar background to "hide" the line */
+}
+
+.submenu-link {
+    display: block;
+    padding: 1px 5px;
+    text-decoration: none;
+    color: #000;
+    font-size: 11px;
+    white-space: nowrap;
+}
+
+.submenu-link:hover {
+    background-color: #e0e0e0;
+    text-decoration: underline;
+}
+
+/* Main Content Area adjustments */
+.main-content {
+    margin-left: 220px;
+    padding: 20px;
+    margin-top: 56px; /* Offset for top navbar */
+}
+
+h1 {
+    font-size: 16px;
+    color: #003366;
+    border-bottom: 1px solid #999;
+    padding-bottom: 5px;
+    margin-top: 0;
+}
+
+.info-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+.info-table th, .info-table td {
+    border: 1px solid #ccc;
+    padding: 4px 8px;
+    text-align: left;
+}
+
+.info-table th {
+    background-color: #efefef;
+    width: 30%;
+}
