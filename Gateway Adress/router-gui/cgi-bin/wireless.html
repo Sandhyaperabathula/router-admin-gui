@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wireless Statistics - S136AN</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/wireless.css">
+</head>
+
+<body>
+
+<div class="main-wrapper">
+
+    <main class="content-area">
+
+        <div class="container-fluid">
+
+            <!-- BREADCRUMB -->
+            <div class="breadcrumb">
+                <a href="index.html">Home</a>
+                <span>/</span>
+                <span>Monitoring</span>
+                <span>/</span>
+                <span>Wireless Statistics</span>
+            </div>
+
+            
+
+                <!-- TITLE -->
+                
+
+              <div class="card wireless-card">
+
+    <!-- TITLE -->
+    <div class="card-header">
+        <h2 class="card-title">
+            WLAN 2.4GHz
+        </h2>
+    </div>
+
+
+    <!-- TRANSMIT STATISTICS -->
+    <div class="stats-section">
+
+        <h3 class="stats-heading">
+            Transmit Statistics
+        </h3>
+
+        <table class="wireless-table">
+
+            <tbody>
+
+                <tr>
+                    <td>Tx Success</td>
+                    <td class="value">3922833</td>
+                </tr>
+
+                <tr>
+                    <td>Tx Retry Count</td>
+                    <td class="value">0</td>
+                </tr>
+
+                <tr>
+                    <td>Tx Fail after retry</td>
+                    <td class="value">0</td>
+                </tr>
+
+                <tr>
+                    <td>RTS Successfully Receive CTS</td>
+                    <td class="value">0</td>
+                </tr>
+
+                <tr>
+                    <td>RTS Fail To Receive CTS</td>
+                    <td class="value">0</td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+
+    <!-- RECEIVE STATISTICS -->
+    <div class="stats-section">
+
+        <h3 class="stats-heading">
+            Receive Statistics
+        </h3>
+
+        <table class="wireless-table">
+
+            <tbody>
+
+                <tr>
+                    <td>Frames Received Successfully</td>
+                    <td class="value">1526043</td>
+                </tr>
+
+                <tr>
+                    <td>Frames Received With CRC Error</td>
+                    <td class="value">288</td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+
+   
+
+    </div>
+
+
+
+                <!-- BUTTONS -->
+                <div class="wireless-actions">
+
+                    <button 
+                        class="wireless-btn refresh-btn"
+                        onclick="refreshStatistics()">
+
+                        Refresh
+
+                    </button>
+
+                    <button 
+                        class="wireless-btn clear-btn"
+                        onclick="clearStatistics()">
+
+                        Clear
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+
+
+<script>
+
+
+
+
+function refreshStatistics(){
+
+    const values = document.querySelectorAll(
+        ".wireless-table td:nth-child(2), .wireless-table td:nth-child(4)"
+    );
+
+    values.forEach((cell) => {
+
+        if(cell.textContent !== "N/A"){
+
+            cell.textContent =
+                Math.floor(Math.random() * 9999999);
+
+        }
+
+    });
+
+}
+
+
+
+/* =========================
+   CLEAR
+========================= */
+
+function clearStatistics(){
+
+    const values = document.querySelectorAll(
+        ".wireless-table td:nth-child(2), .wireless-table td:nth-child(4)"
+    );
+
+    values.forEach((cell) => {
+
+        if(cell.textContent !== "N/A"){
+
+            cell.textContent = "0";
+
+        }
+
+    });
+
+}
+
+
+
+/* =========================
+   DEFAULT LOAD
+========================= */
+
+window.onload = function(){
+
+    loadTable("ethernet");
+
+}
+
+</script>
+
+
+
+<!-- JS FILES -->
+<script src="../js/sidebar.js"></script>
+<script src="../js/navbar.js"></script>
+
+</body>
+</html>

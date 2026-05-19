@@ -1,44 +1,38 @@
 (function() {
-    // Check current path to determine if we are on the login page
     const path = window.location.pathname;
-    const isLoginPage = path.endsWith('index.html') && !path.includes('cgi-bin');
-    const isRoot = path === '/' || path.endsWith('/router-gui/') || path.endsWith('/router-gui/index.html');
-    
-    // Skip rendering if on login page
-    if (isLoginPage || isRoot) {
-        return; 
-    }
+    const isLoginPage = (path.endsWith('index.html') || path.endsWith('/')) && !path.includes('cgi-bin');
+    if (isLoginPage) return;
 
-    // Determine relative paths based on current location
     const isInCgiBin = path.includes('/cgi-bin/');
-    const isInWiFiSetup = path.includes('/WiFi-Setup/');
-    const basePath = isInCgiBin ? '../' : (isInWiFiSetup ? '../../' : './');
+    const basePath = isInCgiBin ? '../' : './';
 
-    // Create navbar element
-    const navbar = document.createElement('nav');
-    navbar.className = 'main-navbar';
-    
-    navbar.innerHTML = `
-        <div class="nav-container">
-            <div class="nav-logo">
-                <img src="${basePath}images/image.png" alt="Logo" onerror="this.style.display='none'">
-                
+    const navbarHTML = `
+        <div class="nav-left">
+            <button class="mobile-toggle" onclick="toggleMobileSidebar()">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
+            <div class="router-info">
+                <span class="router-model">S136AN Gateway</span>
+                <div class="router-status">
+                    <span class="status-indicator"></span>
+                    <span>System Online</span>
+                </div>
             </div>
-            <ul class="nav-links">
-                <li><a href="${basePath}cgi-bin/index.html"></a></li>
-                <li><a href="#"></a></li>
-                <li><a href="#"></a></li>
-                <li><a href="#" id="logout-btn" style="color: #ff7675;">Logout</a></li>
-            </ul>
-            <div class="nav-mobile-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
+        </div>
+
+        <div class="nav-right">
+ 
+            <div class="nav-user">
+                <a href="#" class="logout-btn" id="logout-btn">Logout</a>
             </div>
         </div>
     `;
 
-    // Inject CSS if not already present
+    const navbarContainer = document.createElement('nav');
+    navbarContainer.className = 'main-navbar';
+    navbarContainer.innerHTML = navbarHTML;
+
+    // Inject CSS
     if (!document.getElementById('navbar-styles')) {
         const link = document.createElement('link');
         link.id = 'navbar-styles';
@@ -47,33 +41,32 @@
         document.head.appendChild(link);
     }
 
-    // Prepend to body
+    // Add to body
     if (document.body) {
-        document.body.prepend(navbar);
+        document.body.prepend(navbarContainer);
+        initNavbar();
     } else {
         window.addEventListener('DOMContentLoaded', () => {
-            document.body.prepend(navbar);
+            document.body.prepend(navbarContainer);
+            initNavbar();
         });
     }
 
-    // Mobile menu toggle
-    const toggle = navbar.querySelector('.nav-mobile-toggle');
-    const links = navbar.querySelector('.nav-links');
-    
-    if (toggle && links) {
-        toggle.addEventListener('click', () => {
-            links.classList.toggle('active');
-            toggle.classList.toggle('active');
-        });
+    function initNavbar() {
+        const logoutBtn = document.getElementById('logout-btn');
+        if (logoutBtn) {
+            logoutBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                localStorage.removeItem('login');
+                window.location.href = isInCgiBin ? '../../index.html' : 'index.html';
+            });
+        }
     }
 
-    // Logout functionality
-    const logoutBtn = document.getElementById('logout-btn');
-    if (logoutBtn) {
-        logoutBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            localStorage.removeItem('login');
-            window.location.href = isInCgiBin ? '../../index.html' : (isInWiFiSetup ? '../../../index.html' : 'index.html');
-        });
-    }
+    window.toggleMobileSidebar = function() {
+        const sidebar = document.querySelector('.sidebar');
+        const overlay = document.querySelector('.sidebar-overlay');
+        if (sidebar) sidebar.classList.toggle('show');
+        if (overlay) overlay.classList.toggle('show');
+    };
 })();

@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traffic Statistics - S136AN</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/traffic.css">
+</head>
+
+<body>
+
+<div class="main-wrapper">
+
+    <main class="content-area">
+
+        <div class="container-fluid">
+
+            <!-- BREADCRUMB -->
+            <div class="breadcrumb">
+                <a href="index.html">Home</a>
+                <span>/</span>
+                <span>Monitoring</span>
+                <span>/</span>
+                <span>Traffic Statistics</span>
+            </div>
+
+            <!-- CARD -->
+            <div class="card traffic-card">
+
+                <!-- TITLE -->
+                <div class="card-header">
+                    <h2 class="card-title">
+                        Traffic Statistics
+                    </h2>
+                </div>
+
+                <!-- TOP INTERFACE -->
+                <div class="interface-selector">
+
+                    <div class="selector-row">
+
+                        <span class="selector-title">
+                            Interface :
+                        </span>
+
+                        <label>
+                            <input 
+                                type="radio" 
+                                name="interface"
+                                checked
+                                onclick="loadTable('ethernet')">
+
+                            Ethernet
+                        </label>
+
+                        <label>
+                            <input 
+                                type="radio" 
+                                name="interface"
+                                onclick="loadTable('wlan')">
+
+                            WLAN
+                        </label>
+
+                        <label>
+                            <input 
+                                type="radio" 
+                                name="interface"
+                                onclick="loadTable('pon')">
+
+                            PON
+                        </label>
+
+                        <label>
+                            <input 
+                                type="radio" 
+                                name="interface"
+                                onclick="loadTable('wan')">
+
+                            WAN
+                        </label>
+
+                    </div>
+
+                    <!-- BOTTOM ROW -->
+                    <div class="selector-row" id="subInterfaces">
+
+                    </div>
+
+                </div>
+
+                <!-- TABLE -->
+                <div class="table-responsive">
+
+                    <table class="traffic-table">
+
+                        <thead>
+                            <tr>
+                                <th>Transmit Statistics</th>
+                                <th>Value</th>
+                                <th>Receive Statistics</th>
+                                <th>Value</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="trafficTableBody">
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+                <!-- BUTTONS -->
+                <div class="traffic-actions">
+
+                    <button 
+                        class="traffic-btn refresh-btn"
+                        onclick="refreshStatistics()">
+
+                        Refresh
+
+                    </button>
+
+                    <button 
+                        class="traffic-btn clear-btn"
+                        onclick="clearStatistics()">
+
+                        Clear
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<!-- =========================
+     SCRIPT
+========================= -->
+
+<script>
+
+/* =========================
+   DATA
+========================= */
+
+const trafficData = {
+
+    ethernet: {
+
+        rows: `
+
+            <tr>
+                <td>Transmit Frames</td>
+                <td>0</td>
+                <td>Receive Frames</td>
+                <td>0</td>
+            </tr>
+
+            <tr>
+                <td>Transmit Multicast Frames</td>
+                <td>0</td>
+                <td>Receive Multicast Frames</td>
+                <td>0</td>
+            </tr>
+
+            <tr>
+                <td>Transmit Broadcast Frames</td>
+                <td>0</td>
+                <td>Receive Broadcast Frames</td>
+                <td>0</td>
+            </tr>
+
+            <tr>
+                <td>Transmit Unicast Frames</td>
+                <td>0</td>
+                <td>Receive Unicast Frames</td>
+                <td>0</td>
+            </tr>
+
+        `,
+
+        subRow: `
+
+            <label>
+                <input type="radio" name="subinterface" checked>
+                ETH1
+            </label>
+
+            <label>
+                <input type="radio" name="subinterface">
+                ETH2
+            </label>
+
+            <label>
+                <input type="radio" name="subinterface">
+                ETH3
+            </label>
+
+        `
+    },
+
+
+
+    wlan: {
+
+        rows: `
+
+            <tr>
+                <td>Tx Packets Count</td>
+                <td>3660964</td>
+                <td>Rx Packets Count</td>
+                <td>1392154</td>
+            </tr>
+
+            <tr>
+                <td>Tx Errors Count</td>
+                <td>0</td>
+                <td>Rx Errors Count</td>
+                <td>283</td>
+            </tr>
+
+            <tr>
+                <td>Tx Drops Count</td>
+                <td>0</td>
+                <td>Rx Drops Count</td>
+                <td>294249</td>
+            </tr>
+
+        `,
+
+        subRow: `
+
+            <label>
+                <input type="radio" name="subinterface" checked>
+                WLAN1
+            </label>
+
+            <label>
+                <input type="radio" name="subinterface">
+                WLAN2
+            </label>
+
+            <label>
+                <input type="radio" name="subinterface">
+                WLAN3
+            </label>
+
+            <label>
+                <input type="radio" name="subinterface">
+                WLAN4
+            </label>
+
+            <label>
+                <input type="radio" name="subinterface">
+                WLAN TOTAL
+            </label>
+
+        `
+    },
+
+
+
+    pon: {
+
+        rows: `
+
+            <tr>
+                <td>Tx Packets Count</td>
+                <td>1077866</td>
+                <td>Rx Packets Count</td>
+                <td>159076646</td>
+            </tr>
+
+            <tr>
+                <td>Tx Bytes Count</td>
+                <td>271600520</td>
+                <td>Rx Bytes Count</td>
+                <td>1971525591</td>
+            </tr>
+
+            <tr>
+                <td>Transmit Multicast Frames</td>
+                <td>581</td>
+                <td>Receive Multicast Frame</td>
+                <td>155438552</td>
+            </tr>
+
+            <tr>
+                <td>Transmit Broadcast Frames</td>
+                <td>1451</td>
+                <td>Receive Broadcast Frame</td>
+                <td>1226</td>
+            </tr>
+
+            <tr>
+                <td>Transmit Collision</td>
+                <td>0</td>
+                <td>Receive CRC Errors</td>
+                <td>0</td>
+            </tr>
+
+            <tr>
+                <td>Transmit Under-size Frames</td>
+                <td>0</td>
+                <td>Receive Under-size Frames</td>
+                <td>0</td>
+            </tr>
+
+        `,
+
+        subRow: ``
+    },
+
+
+
+    wan: {
+
+        rows: `
+
+            <tr>
+                <td>Transmit Unicast Frames</td>
+                <td>765194</td>
+                <td>Receive Unicast Frames</td>
+                <td>3403865</td>
+            </tr>
+
+            <tr>
+                <td>Transmit Unicast Bytes</td>
+                <td>185394610</td>
+                <td>Receive Unicast Bytes</td>
+                <td>4247775376</td>
+            </tr>
+
+            <tr>
+                <td>Transmit Multicast Frames</td>
+                <td>N/A</td>
+                <td>Receive Multicast Frame</td>
+                <td>14432799</td>
+            </tr>
+
+            <tr>
+                <td>Transmit Multicast Bytes</td>
+                <td>N/A</td>
+                <td>Receive Multicast Bytes</td>
+                <td>19657472238</td>
+            </tr>
+
+        `,
+
+        subRow: `
+
+            <label>
+                <input type="radio" name="subinterface" checked>
+                WAN0
+            </label>
+
+        `
+    }
+
+};
+
+
+
+/* =========================
+   LOAD TABLE
+========================= */
+
+function loadTable(type){
+
+    document.getElementById("trafficTableBody").innerHTML =
+        trafficData[type].rows;
+
+    document.getElementById("subInterfaces").innerHTML =
+        trafficData[type].subRow;
+
+}
+
+
+
+/* =========================
+   REFRESH
+========================= */
+
+function refreshStatistics(){
+
+    const values = document.querySelectorAll(
+        ".traffic-table td:nth-child(2), .traffic-table td:nth-child(4)"
+    );
+
+    values.forEach((cell) => {
+
+        if(cell.textContent !== "N/A"){
+
+            cell.textContent =
+                Math.floor(Math.random() * 9999999);
+
+        }
+
+    });
+
+}
+
+
+
+/* =========================
+   CLEAR
+========================= */
+
+function clearStatistics(){
+
+    const values = document.querySelectorAll(
+        ".traffic-table td:nth-child(2), .traffic-table td:nth-child(4)"
+    );
+
+    values.forEach((cell) => {
+
+        if(cell.textContent !== "N/A"){
+
+            cell.textContent = "0";
+
+        }
+
+    });
+
+}
+
+
+
+/* =========================
+   DEFAULT LOAD
+========================= */
+
+window.onload = function(){
+
+    loadTable("ethernet");
+
+}
+
+</script>
+
+
+
+<!-- JS FILES -->
+<script src="../js/sidebar.js"></script>
+<script src="../js/navbar.js"></script>
+
+</body>
+</html>

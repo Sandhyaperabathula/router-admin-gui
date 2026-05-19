@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firmware Upgrade - S136AN</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="main-wrapper">
+        <main class="content-area">
+            <div class="container-fluid">
+                <div class="breadcrumb">
+                    <a href="index.html">Home</a>
+                    <span>/</span>
+                    <span>System</span>
+                    <span>/</span>
+                    <span>Firmware Upgrade</span>
+                </div>
+
+                <h1 class="page-title">Firmware Upgrade</h1>
+                <p class="text-muted mb-4">Keep your gateway up to date with the latest features and security patches.</p>
+
+                <div class="grid grid-cols-1">
+                    <!-- Current Version Info -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h2 class="card-title">System Information</h2>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table">
+                                <tr>
+                                    <th>Current Firmware Version</th>
+                                    <td>V1.0.12-230513</td>
+                                </tr>
+                                <tr>
+                                    <th>Build Date</th>
+                                    <td>May 13, 2023</td>
+                                </tr>
+                                <tr>
+                                    <th>Release Status</th>
+                                    <td><span class="badge badge-success">Latest Stable</span></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Upgrade Card -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h2 class="card-title">Upload New Firmware</h2>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Select Firmware File (.bin)</label>
+                            <input type="file" class="form-control" accept=".bin">
+                            <small class="text-muted">Do not power off the device during the upgrade process.</small>
+                        </div>
+                        <div class="flex justify-between items-center mt-4">
+                            <div class="flex items-center gap-2 text-sm text-warning font-medium">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 14 4-4"></path><path d="M3.34 19a10 10 0 1 1 17.32 0"></path></svg>
+                                Estimated time: 3-5 minutes
+                            </div>
+                            <button class="btn btn-primary">Start Upgrade</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- JS Files -->
+    <script src="../js/sidebar.js"></script>
+    <script src="../js/navbar.js"></script>
+</body>
+</html>

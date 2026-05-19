@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backup & Restore - S136AN</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="main-wrapper">
+        <main class="content-area">
+            <div class="container-fluid">
+                <div class="breadcrumb">
+                    <a href="index.html">Home</a>
+                    <span>/</span>
+                    <span>System</span>
+                    <span>/</span>
+                    <span>Backup & Restore</span>
+                </div>
+
+                <h1 class="page-title">Maintenance</h1>
+                <p class="text-muted mb-4">Manage your configuration files and system settings.</p>
+
+                <div class="grid grid-cols-2">
+                    <!-- Backup Card -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h2 class="card-title">Backup Configuration</h2>
+                        </div>
+                        <p class="text-sm text-muted mb-4">Save your current settings to a file on your computer.</p>
+                        <button class="btn btn-primary w-full">Download Backup File</button>
+                    </div>
+
+                    <!-- Restore Card -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h2 class="card-title">Restore Configuration</h2>
+                        </div>
+                        <p class="text-sm text-muted mb-4">Upload a previously saved configuration file.</p>
+                        <div class="form-group">
+                            <input type="file" class="form-control mb-2">
+                            <button class="btn btn-outline w-full">Upload and Restore</button>
+                        </div>
+                    </div>
+
+                    <!-- Reset Card -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h2 class="card-title">Factory Reset</h2>
+                        </div>
+                        <p class="text-sm text-muted mb-4">Restore the device to its original factory settings. All current settings will be lost.</p>
+                        <button class="btn btn-outline w-full" style="color: var(--error); border-color: var(--error);">Perform Factory Reset</button>
+                    </div>
+
+                    <!-- Reboot Card -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h2 class="card-title">System Reboot</h2>
+                        </div>
+                        <p class="text-sm text-muted mb-4">Restart the gateway to apply changes or resolve issues.</p>
+                        <button class="btn btn-primary w-full" style="background: var(--bg-navbar);">Reboot Device</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- JS Files -->
+    <script src="../js/sidebar.js"></script>
+    <script src="../js/navbar.js"></script>
+</body>
+</html>

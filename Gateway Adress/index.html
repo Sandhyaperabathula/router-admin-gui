@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self' http://127.0.0.1:5500;">
     <title>S136AN Gateway - Login</title>
+    <link rel="icon" href="data:,">
     <link rel="stylesheet" href="router-gui/css/style.css">
 </head>
 <body>
@@ -15,25 +17,19 @@
             
             <div class="panel-content">
                 <div class="brand-row">
-                    <!-- <div class="logo-square">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="4" y="4" width="16" height="16" rx="4" fill="white"/>
-                            <path d="M8 12L11 15L16 9" stroke="#0a1628" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </div> -->
                     <div class="logo">
-                  <img src="router-gui/images/image.png" alt="Logo">
-              </div>  
+                        <img src="router-gui/images/image.png" alt="Logo">
+                    </div>  
                 </div>
 
                 <div class="admin-pill">ROUTER ADMIN PANEL</div>
 
-                <h1 class="hero-heading">Manage your network with<br>confidence</h1>
-                
+                <h2 class="hero-heading">Manage your network with confidence
+                </h2>
                 <p class="hero-subtitle">Secure, high-speed connectivity for all your devices with advanced management tools.</p>
 
-                <div class="status-chips">
-                    <!-- <div class="status-chip">
+                <!-- <div class="status-chips">
+                    <div class="status-chip">
                         <div class="icon-tile blue">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"></path><path d="M1.42 9a16 16 0 0 1 21.16 0"></path><path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path><line x1="12" y1="20" x2="12.01" y2="20"></line></svg>
                         </div>
@@ -51,16 +47,7 @@
                             <span class="chip-value">WPA3-SAE</span>
                         </div>
                     </div>
-                    <div class="status-chip">
-                        <div class="icon-tile orange">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                        </div>
-                        <div class="chip-info">
-                            <span class="chip-label">System Uptime</span>
-                            <span class="chip-value">12d 4h 22m</span>
-                        </div>
-                    </div> -->
-                </div>
+                </div> -->
             </div>
         </div>
 
@@ -74,9 +61,8 @@
                 </div>
 
                 <div class="login-form-container">
-                   
                     <h2 class="form-title">Sign in</h2>
-                    <!-- <p class="form-subtitle">Enter your credentials to manage your gateway settings.</p> -->
+                    <p class="form-subtitle">Enter your credentials to manage your gateway settings.</p>
 
                     <div class="input-group">
                         <div class="input-wrapper">
@@ -101,29 +87,34 @@
 
                     <p id="error" class="error-msg">Invalid Username or Password</p>
 
-                    <button class="primary-btn" onclick="login()">
-                        Sign in to gateway
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                    </button>
+                  <button class="primary-btn" id="loginBtn" onclick="handleLogin()">
 
-                    <!-- <div class="divider">
-                        <span>or quick access</span>
-                    </div> -->
+    <span class="btn-text">
+        Sign in to gateway
+    </span>
 
-                    <!-- <div class="quick-access">
-                        <button class="ghost-btn">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"></path><path d="M1.42 9a16 16 0 0 1 21.16 0"></path><path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path><line x1="12" y1="20" x2="12.01" y2="20"></line></svg>
-                            WiFi status
-                        </button>
-                        <button class="ghost-btn">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
-                            Device info
-                        </button>
-                    </div> -->
+    <span class="btn-loader"></span>
 
-                    <!-- <div class="footer-row">
-                        <span class="firmware">Firmware: v1.4.2-build09</span>
-                        <a href="#" class="forgot-link">Forgot password?</a>
+    <svg class="btn-icon"
+        width="18"
+        height="18"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round">
+
+        <line x1="5" y1="12" x2="19" y2="12"></line>
+        <polyline points="12 5 19 12 12 19"></polyline>
+
+    </svg>
+
+</button>
+
+                    <!-- <div class="footer-row mt-4 pt-4 border-t border-light">
+                        <span class="firmware text-xs text-muted">Firmware: v1.0.12</span>
+                        <a href="#" class="text-xs text-primary font-medium">Forgot password?</a>
                     </div> -->
                 </div>
             </div>
@@ -131,5 +122,33 @@
     </div>
 
     <script src="router-gui/js/login.js"></script>
+    <script>
+        function togglePassword() {
+            const passwordInput = document.getElementById('password');
+            const eyeIcon = document.getElementById('eye-icon');
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+            } else {
+                passwordInput.type = 'password';
+            }
+        }
+
+        function handleLogin(){
+
+    const btn = document.getElementById("loginBtn");
+
+    btn.classList.add("loading");
+
+    btn.disabled = true;
+
+    // Existing login function
+    setTimeout(() => {
+
+        login();
+
+    }, 1200);
+}
+
+    </script>
 </body>
 </html>
