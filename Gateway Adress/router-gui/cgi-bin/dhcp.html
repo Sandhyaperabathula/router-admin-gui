@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Current Users - S136AN</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/current-users.css">
+    <link rel="stylesheet" href="../css/dhcp.css">
+</head>
+
+<body>
+
+<div class="main-wrapper">
+
+    <main class="content-area">
+
+        <div class="container-fluid">
+
+            <!-- BREADCRUMB -->
+            <div class="breadcrumb">
+                <a href="index.html">Home</a>
+                <span>/</span>
+                <span>Monitoring</span>
+                <span>/</span>
+                <span>Current Users</span>
+            </div>
+
+
+            <!-- CARD -->
+            <div class="card users-card">
+
+                <!-- HEADER -->
+                <div class="card-header">
+
+                    <h2 class="card-title">
+                        Current Users
+                    </h2>
+
+                    <span class="users-count">
+                        3 Devices Connected
+                    </span>
+
+                </div>
+
+
+                <!-- TABLE -->
+                <div class="table-responsive">
+
+                    <table class="users-table">
+
+                        <thead>
+
+                            <tr>
+                                <th>Index</th>
+                                <th>HostName</th>
+                                <th>IP Address</th>
+                                <th>MAC Address</th>
+                                <th>Expire Time</th>
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="usersTableBody">
+
+                            <tr>
+                                <td>1</td>
+                                <td>android-16faf4ee2f832c7a</td>
+                                <td>192.168.55.103</td>
+                                <td>9C:65:EE:4A:FB:29</td>
+                                <td class="expire">0 days 0:0:17</td>
+                            </tr>
+
+                            <tr>
+                                <td>2</td>
+                                <td>Redmi8-Redmi8</td>
+                                <td>192.168.55.102</td>
+                                <td>58:20:59:AC:D4:52</td>
+                                <td class="expire">0 days 0:0:29</td>
+                            </tr>
+
+                            <tr>
+                                <td>3</td>
+                                <td>LAPTOP-3Q0EK3TN</td>
+                                <td>192.168.55.104</td>
+                                <td>50:C2:E8:98:15:BD</td>
+                                <td class="expire">0 days 0:0:17</td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+                <!-- BUTTON -->
+                <div class="users-actions">
+
+                    <button 
+                        class="users-btn refresh-btn"
+                        onclick="refreshUsers()">
+
+                        Refresh
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+
+<script>
+
+/* =========================
+   REFRESH USERS
+========================= */
+
+function refreshUsers(){
+
+    const expireTimes =
+        document.querySelectorAll(".expire");
+
+    expireTimes.forEach((item) => {
+
+        const randomSeconds =
+            Math.floor(Math.random() * 59);
+
+        item.textContent =
+            `0 days 0:0:${randomSeconds}`;
+
+    });
+
+}
+
+</script>
+
+
+<!-- JS -->
+<script src="../js/sidebar.js"></script>
+<script src="../js/navbar.js"></script>
+
+</body>
+</html>

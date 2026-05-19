@@ -1,59 +1,649 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Router Dashboard</title>
-
-    <meta http-equiv="Content-Security-Policy"
-        content="default-src * 'unsafe-inline' 'unsafe-eval';
-        script-src * 'unsafe-inline' 'unsafe-eval';
-        connect-src * 'unsafe-inline';
-        img-src * data: blob: 'unsafe-inline';
-        style-src * 'unsafe-inline';">
-
-    <link rel="stylesheet" href="../css/sidebar.css">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self' http://127.0.0.1:5500;">
+    <title>Dashboard - S136AN</title>
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/device.css">
 </head>
-
 <body>
+    <div class="main-wrapper">
+        <!-- Sidebar and Navbar are injected via JS -->
+        
+        <main class="content-area">
+            <div class="container-fluid">
+                <div class="breadcrumb">
+                    <a href="#">Home</a>
+                    <span>/</span>
+                    <span>Monitoring</span>
+                    <span>/</span>
+                    <span>Device Info</span>
+                </div>
 
-    <div class="main-content">
-        <h1>Device Information</h1>
+                <h1 class="page-title">Network Overview</h1>
+                <p class="text-muted mb-4">Real-time status and information about your gateway.</p>
 
-        <table class="info-table">
-            <tr>
-                <th>Model Name</th>
-                <td>S136AN</td>
-            </tr>
+                <!-- Stat Cards -->
+                <div class="grid grid-cols-4 mb-4">
+                    <div class="card">
+                        <div class="stat-card">
+                            <div class="stat-icon" style="background: #dbeafe; color: #1e40af;">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                            </div>
+                            <div class="stat-info">
+                                <div class="stat-value">12</div>
+                                <div class="stat-label">Connected Users</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="stat-card">
+                            <div class="stat-icon" style="background: #dcfce7; color: #166534;">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"></path><path d="M1.42 9a16 16 0 0 1 21.16 0"></path><path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path><line x1="12" y1="20" x2="12.01" y2="20"></line></svg>
+                            </div>
+                            <div class="stat-info">
+                                <div class="stat-value">Active</div>
+                                <div class="stat-label">WiFi Status</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="stat-card">
+                            <div class="stat-icon" style="background: #fef3c7; color: #92400e;">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 14 4-4"></path><path d="M3.34 19a10 10 0 1 1 17.32 0"></path></svg>
+                            </div>
+                            <div class="stat-info">
+                                <div class="stat-value">150 Mbps</div>
+                                <div class="stat-label">Download Speed</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="stat-card">
+                            <div class="stat-icon" style="background: #fee2e2; color: #991b1b;">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                            </div>
+                            <div class="stat-info">
+                                <div class="stat-value">4h 12m</div>
+                                <div class="stat-label">System Uptime</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-            <tr>
-                <th>Serial Number</th>
-                <td>DSNW12345678</td>
-            </tr>
+                <div class="grid grid-cols-2">
+                
+<div class="card device-card">
+    
+    <div class="card-header">
+        <div>
+            <h2 class="card-title">Device Information</h2>
+            <p class="card-subtitle">
+                System and firmware details
+            </p>
+        </div>
 
-            <tr>
-                <th>Hardware Version</th>
-                <td>V1.0</td>
-            </tr>
+        <span class="badge badge-success">
+            Online
+        </span>
+    </div>
 
-            <tr>
-                <th>Software Version</th>
-                <td>V1.0.12-230513</td>
-            </tr>
+    <div class="device-grid">
 
-            <tr>
-                <th>Uptime</th>
-                <td>0 days, 04:12:33</td>
-            </tr>
+        <div class="device-item">
+            <span class="label">Model Name</span>
+            <span class="value">H662GS</span>
+        </div>
+
+        <div class="device-item">
+            <span class="label">OS1</span>
+            <span class="value active">
+                H662GS 1.03-0020 (Active)
+            </span>
+        </div>
+
+        <div class="device-item">
+            <span class="label">OS2</span>
+            <span class="value">
+                H662GS 1.03-0020
+            </span>
+        </div>
+
+        <div class="device-item">
+            <span class="label">GPON Serial</span>
+            <span class="value mono">
+                DSNW264cf290
+            </span>
+        </div>
+
+        <div class="device-item">
+            <span class="label">System MAC</span>
+            <span class="value mono">
+                9c:65:ee:4c:f2:90
+            </span>
+        </div>
+
+        <div class="device-item">
+            <span class="label">LAN MAC</span>
+            <span class="value mono">
+                9c:65:ee:4c:f2:97
+            </span>
+        </div>
+
+        <div class="device-item">
+            <span class="label">Current Time</span>
+            <span class="value">
+                Mon May 18 20:10:18 2026
+            </span>
+        </div>
+
+        <div class="device-item">
+            <span class="label">System Uptime</span>
+            <span class="value success">
+                11h 46m 46s
+            </span>
+        </div>
+
+   
+</div>
+                    </div>
+
+                    <!-- Network Status Card -->
+                    <!-- <div class="card">
+                        <div class="card-header">
+                            <h2 class="card-title">Network Status</h2>
+                            <span class="badge badge-success">Online</span>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table">
+                                <tr>
+                                    <th>Connection Type</th>
+                                    <td>PPPoE</td>
+                                </tr>
+                                <tr>
+                                    <th>WAN IP</th>
+                                    <td>192.168.1.100</td>
+                                </tr>
+                                <tr>
+                                    <th>Gateway</th>
+                                    <td>192.168.1.1</td>
+                                </tr>
+                                <tr>
+                                    <th>Primary DNS</th>
+                                    <td>8.8.8.8</td>
+                                </tr>
+                                <tr>
+                                    <th>Secondary DNS</th>
+                                    <td>8.8.4.4</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div> -->
+                    <!-- LAN Section -->
+<div class="card">
+    <div class="card-header">
+        <h2 class="card-title">LAN</h2>
+    </div>
+
+    <!-- Ethernet Port Status -->
+    <div class="table-responsive">
+        <h3>Ethernet Port Status</h3>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Port</th>
+                    <th>Admin</th>
+                    <th>Status</th>
+                    <th>Mode</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Up</td>
+                    <td>Down</td>
+                    <td>Na/Na</td>
+                </tr>
+
+                <tr>
+                    <td>2</td>
+                    <td>Up</td>
+                    <td>Down</td>
+                    <td>Na/Na</td>
+                </tr>
+
+                <tr>
+                    <td>3</td>
+                    <td>Up</td>
+                    <td>Up</td>
+                    <td>Full/100</td>
+                </tr>
+            </tbody>
         </table>
+    </div>
+
+    <!-- IPv4 -->
+    <div class="network-box">
+        <h3>IPv4</h3>
+
+        <div class="network-item">
+            <span>IP Address</span>
+            <span>192.168.55.1</span>
+        </div>
+
+        <div class="network-item">
+            <span>Subnet Mask</span>
+            <span>255.255.255.0</span>
+        </div>
+
+        <div class="network-item">
+            <span>DHCP</span>
+            <span>Enabled</span>
+        </div>
+    </div>
+
+    <!-- IPv6 -->
+    <div class="network-box">
+        <h3>IPv6</h3>
+
+        <div class="network-item">
+            <span>Link Local IP</span>
+            <span>fe80::1/64</span>
+        </div>
+
+        <div class="network-item">
+            <span>Manual Global IP</span>
+            <span>-</span>
+        </div>
+
+        <div class="network-item">
+            <span>Dynamic Global IP</span>
+            <span>-</span>
+        </div>
+
+        <div class="network-item">
+            <span>DHCP Server</span>
+            <span>Enable</span>
+        </div>
+    </div>
+</div>
+
+<!-- WAN Section -->
+<div class="card">
+    <div class="card-header">
+        <h2 class="card-title">WAN</h2>
+    </div>
+
+    <!-- WAN Basic Info -->
+    <div class="network-box">
+        <div class="network-item">
+            <span>Interface</span>
+            <span>WAN0</span>
+        </div>
+
+        <div class="network-item">
+            <span>Connection Type</span>
+            <span>Dynamic IP</span>
+        </div>
+
+        <div class="network-item">
+            <span>MAC Address</span>
+            <span>9c:65:ee:4c:f2:91</span>
+        </div>
+    </div>
+
+    <!-- IPv4 -->
+    <div class="network-box">
+        <h3>IPv4</h3>
+
+        <div class="network-item">
+            <span>Status</span>
+            <span class="status-connected">Connected</span>
+        </div>
+
+        <div class="network-item">
+            <span>IP Address</span>
+            <span>10.2.124.41</span>
+        </div>
+
+        <div class="network-item">
+            <span>Subnet Mask</span>
+            <span>255.252.0.0</span>
+        </div>
+
+        <div class="network-item">
+            <span>Gateway</span>
+            <span>10.0.0.1</span>
+        </div>
+
+        <div class="network-item">
+            <span>Primary DNS</span>
+            <span>103.211.109.11</span>
+        </div>
+
+        <div class="network-item">
+            <span>Secondary DNS</span>
+            <span>103.211.109.12</span>
+        </div>
+    </div>
+
+    <!-- IPv6 -->
+    <div class="network-box">
+        <h3>IPv6</h3>
+
+        <div class="network-item">
+            <span>Status</span>
+            <span class="status-disconnected">Not Connected</span>
+        </div>
+
+        <div class="network-item">
+            <span>IP Address</span>
+            <span>N/A</span>
+        </div>
+
+        <div class="network-item">
+            <span>Prefix Length</span>
+            <span>N/A</span>
+        </div>
+
+        <div class="network-item">
+            <span>Default Gateway</span>
+            <span>N/A</span>
+        </div>
+
+        <div class="network-item">
+            <span>Primary DNS</span>
+            <span>N/A</span>
+        </div>
+
+        <div class="network-item">
+            <span>Secondary DNS</span>
+            <span>N/A</span>
+        </div>
+
+        <div class="network-item">
+            <span>Prefix Delegation</span>
+            <span>N/A</span>
+        </div>
+    </div>
+</div>
+
+<!-- ROUTE SECTION -->
+<div class="card">
+    <div class="card-header">
+        <h2 class="card-title">Route</h2>
+    </div>
+
+    <!-- Policy Routing Table -->
+    <div class="table-responsive">
+        <h3>Policy Routing Table</h3>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Policy Rule Index</th>
+                    <th>Gateway IP</th>
+                    <th>Device</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td colspan="4" style="text-align:center;">
+                        No Policy Rules
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Routing Table -->
+    <div class="table-responsive">
+        <h3>Routing Table</h3>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Dest IP</th>
+                    <th>Mask</th>
+                    <th>Gateway IP</th>
+                    <th>Metric</th>
+                    <th>Device</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>0</td>
+                    <td>172.18.4.81</td>
+                    <td>255.255.255.255</td>
+                    <td>10.0.0.1</td>
+                    <td>0</td>
+                    <td>WAN0</td>
+                </tr>
+
+                <tr>
+                    <td>1</td>
+                    <td>192.168.55.0</td>
+                    <td>255.255.255.0</td>
+                    <td>0.0.0.0</td>
+                    <td>0</td>
+                    <td>LAN</td>
+                </tr>
+
+                <tr>
+                    <td>2</td>
+                    <td>192.168.56.0</td>
+                    <td>255.255.255.0</td>
+                    <td>0.0.0.0</td>
+                    <td>0</td>
+                    <td>LAN</td>
+                </tr>
+
+                <tr>
+                    <td>3</td>
+                    <td>127.0.0.0</td>
+                    <td>255.255.0.0</td>
+                    <td>0.0.0.0</td>
+                    <td>0</td>
+                    <td>lo</td>
+                </tr>
+
+                <tr>
+                    <td>4</td>
+                    <td>10.0.0.0</td>
+                    <td>255.252.0.0</td>
+                    <td>0.0.0.0</td>
+                    <td>0</td>
+                    <td>WAN0</td>
+                </tr>
+
+                <tr>
+                    <td>5</td>
+                    <td>0.0.0.0</td>
+                    <td>0.0.0.0</td>
+                    <td>10.0.0.1</td>
+                    <td>0</td>
+                    <td>WAN0</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- xPON SECTION -->
+<div class="card">
+    <div class="card-header">
+        <h2 class="card-title">xPON</h2>
+    </div>
+
+    <div class="network-box">
+
+        <div class="network-item">
+            <span>xPON Firmware Ver</span>
+            <span>RP0201</span>
+        </div>
+
+        <div class="network-item">
+            <span>Link State</span>
+            <span class="status-connected">up</span>
+        </div>
+
+        <div class="network-item">
+            <span>xPON Mode</span>
+            <span>GPON</span>
+        </div>
+
+    </div>
+</div>
+
+<!-- OLT SECTION -->
+<div class="card">
+    <div class="card-header">
+        <h2 class="card-title">OLT</h2>
+    </div>
+
+    <div class="network-box">
+
+        <div class="network-item">
+            <span>OLT Type</span>
+            <span>CISCO</span>
+        </div>
+
+    </div>
+</div>
+
+<!-- TRANSCEIVER SECTION -->
+<div class="card">
+    <div class="card-header">
+        <h2 class="card-title">Transceiver</h2>
+    </div>
+
+    <div class="network-box">
+
+        <div class="network-item">
+            <span>Optical Type</span>
+            <span>B+</span>
+        </div>
+
+        <div class="network-item">
+            <span>Rx Power</span>
+            <span class="status-disconnected">-31 dBm</span>
+        </div>
+
+        <div class="network-item">
+            <span>Tx Power</span>
+            <span>2.5 dBm</span>
+        </div>
+
+        <div class="network-item">
+            <span>Tx Bias Current</span>
+            <span>14.968 mA</span>
+        </div>
+
+        <div class="network-item">
+            <span>Supply Voltage</span>
+            <span>3.271 V</span>
+        </div>
+
+        <div class="network-item">
+            <span>Temperature</span>
+            <span>53 °C</span>
+        </div>
+
+    </div>
+</div>
+
+<!-- DDM THRESHOLD -->
+<div class="card">
+    <div class="card-header">
+        <h2 class="card-title">DDM Threshold</h2>
+    </div>
+
+    <div class="network-box">
+
+        <div class="network-item">
+            <span>Lower Tx Power Threshold</span>
+            <span>N/A</span>
+        </div>
+
+        <div class="network-item">
+            <span>Upper Tx Power Threshold</span>
+            <span>N/A</span>
+        </div>
+
+        <div class="network-item">
+            <span>Lower Rx Power Threshold</span>
+            <span>N/A</span>
+        </div>
+
+        <div class="network-item">
+            <span>Upper Rx Power Threshold</span>
+            <span>N/A</span>
+        </div>
+
+        <div class="network-item">
+            <span>Lower Voltage Threshold</span>
+            <span>N/A</span>
+        </div>
+
+        <div class="network-item">
+            <span>Upper Voltage Threshold</span>
+            <span>N/A</span>
+        </div>
+
+        <div class="network-item">
+            <span>Lower Temperature Threshold</span>
+            <span>N/A</span>
+        </div>
+
+        <div class="network-item">
+            <span>Upper Temperature Threshold</span>
+            <span>N/A</span>
+        </div>
+
+        <div class="network-item">
+            <span>Lower Tx Bias Threshold</span>
+            <span>N/A</span>
+        </div>
+
+        <div class="network-item">
+            <span>Upper Tx Bias Threshold</span>
+            <span>N/A</span>
+        </div>
+
+    </div>
+</div>
+
+<!-- OTT SECTION -->
+<div class="card">
+    <div class="card-header">
+        <h2 class="card-title">OTT</h2>
+    </div>
+
+    <div class="network-box">
+
+        <div class="network-item">
+            <span>OTT Status</span>
+            <span class="status-connected">running</span>
+        </div>
+
+    </div>
+</div>
+                </div>
+            </div>
+        </main>
     </div>
 
     <!-- JS Files -->
     <script src="../js/sidebar.js"></script>
     <script src="../js/navbar.js"></script>
-
 </body>
-
 </html>

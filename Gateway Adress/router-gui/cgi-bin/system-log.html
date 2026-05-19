@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Log - S136AN</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="main-wrapper">
+        <main class="content-area">
+            <div class="container-fluid">
+                <div class="breadcrumb">
+                    <a href="index.html">Home</a>
+                    <span>/</span>
+                    <span>System</span>
+                    <span>/</span>
+                    <span>System Log</span>
+                </div>
+
+                <div class="flex justify-between items-center mb-4">
+                    <div>
+                        <h1 class="page-title">System Log</h1>
+                        <p class="text-muted">Review system events and security logs.</p>
+                    </div>
+                    <div class="flex gap-2">
+                        <button class="btn btn-outline btn-sm">Clear Log</button>
+                        <button class="btn btn-outline btn-sm">Download Log</button>
+                        <button class="btn btn-primary btn-sm">Refresh</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="flex gap-4 items-center">
+                            <h2 class="card-title">Recent Events</h2>
+                            <select class="form-control" style="width: 150px; padding: 4px 8px;">
+                                <option value="All">All Levels</option>
+                                <option value="Info">Info</option>
+                                <option value="Warning">Warning</option>
+                                <option value="Error">Error</option>
+                                <option value="Critical">Critical</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table" style="font-family: monospace; font-size: 13px;">
+                            <thead>
+                                <tr>
+                                    <th style="width: 180px;">Timestamp</th>
+                                    <th style="width: 100px;">Level</th>
+                                    <th>Message</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>2026-05-16 14:22:10</td>
+                                    <td><span class="badge badge-info">INFO</span></td>
+                                    <td>Admin login successful from 192.168.1.5</td>
+                                </tr>
+                                <tr>
+                                    <td>2026-05-16 14:15:05</td>
+                                    <td><span class="badge badge-success">SUCCESS</span></td>
+                                    <td>Wireless settings updated successfully</td>
+                                </tr>
+                                <tr>
+                                    <td>2026-05-16 13:50:12</td>
+                                    <td><span class="badge badge-warning">WARNING</span></td>
+                                    <td>Unauthorized login attempt from 203.0.113.45</td>
+                                </tr>
+                                <tr>
+                                    <td>2026-05-16 12:00:01</td>
+                                    <td><span class="badge badge-info">INFO</span></td>
+                                    <td>NTP time synchronization successful</td>
+                                </tr>
+                                <tr>
+                                    <td>2026-05-16 10:30:45</td>
+                                    <td><span class="badge badge-info">INFO</span></td>
+                                    <td>System started up (Firmware v1.0.12)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- JS Files -->
+    <script src="../js/sidebar.js"></script>
+    <script src="../js/navbar.js"></script>
+</body>
+</html>

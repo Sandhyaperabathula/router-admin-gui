@@ -1,0 +1,154 @@
+/* =========================
+   USERS CARD
+========================= */
+
+.users-card{
+    background:rgba(255,255,255,0.92);
+    backdrop-filter:blur(14px);
+    border:1px solid rgba(255,255,255,0.25);
+    border-radius:26px;
+    padding:30px;
+    box-shadow:
+        0 12px 35px rgba(15,23,42,0.06);
+    margin-top:20px;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.card-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:28px;
+}
+
+.card-title{
+    font-size:28px;
+    font-weight:700;
+    color:#0f172a;
+}
+
+.users-count{
+    background:#dbeafe;
+    color:#2563eb;
+    padding:10px 16px;
+    border-radius:12px;
+    font-size:14px;
+    font-weight:600;
+}
+
+
+/* =========================
+   TABLE
+========================= */
+
+.users-table{
+    width:100%;
+    border-collapse:collapse;
+    overflow:hidden;
+    border-radius:18px;
+    background:#fff;
+}
+
+.users-table thead{
+    background:#f8fafc;
+}
+
+.users-table th{
+    padding:16px;
+    border-bottom:1px solid #e2e8f0;
+    font-size:15px;
+    font-weight:700;
+    color:#0f172a;
+    text-align:left;
+}
+
+.users-table td{
+    padding:16px;
+    border-bottom:1px solid #edf2f7;
+    font-size:14px;
+    color:#475569;
+}
+
+.users-table tbody tr{
+    transition:0.25s ease;
+}
+
+.users-table tbody tr:hover{
+    background:#f8fbff;
+}
+
+.users-table tbody tr:last-child td{
+    border-bottom:none;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.users-actions{
+    margin-top:28px;
+    display:flex;
+    justify-content:center;
+}
+
+.users-btn{
+    border:none;
+    padding:13px 28px;
+    border-radius:14px;
+    cursor:pointer;
+    font-size:15px;
+    font-weight:600;
+    transition:0.3s ease;
+    min-width:140px;
+}
+
+.refresh-btn{
+    background:linear-gradient(
+        135deg,
+        #2563eb,
+        #1d4ed8
+    );
+
+    color:#fff;
+
+    box-shadow:
+        0 10px 20px rgba(37,99,235,0.25);
+}
+
+.refresh-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:
+        0 14px 24px rgba(37,99,235,0.35);
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:768px){
+
+    .users-card{
+        padding:22px;
+    }
+
+    .card-header{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:14px;
+    }
+
+    .card-title{
+        font-size:22px;
+    }
+
+    .users-table{
+        min-width:700px;
+    }
+
+}
