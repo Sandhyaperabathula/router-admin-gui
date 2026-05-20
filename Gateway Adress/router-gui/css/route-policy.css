@@ -1,0 +1,227 @@
+/* =========================
+   TOP ACTION
+========================= */
+
+.top-action-row{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:16px;
+
+    margin-bottom:28px;
+}
+
+.action-group{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+}
+
+
+/* =========================
+   POLICY ROW
+========================= */
+
+.policy-row{
+
+    display:grid;
+
+    grid-template-columns:
+        240px
+        1fr;
+
+    align-items:center;
+
+    gap:24px;
+
+    padding:16px 0;
+
+    border-bottom:1px solid #edf2f7;
+}
+
+.policy-row:last-child{
+    border-bottom:none;
+}
+
+
+/* =========================
+   LABEL
+========================= */
+
+.policy-label{
+
+    font-size:14px;
+
+    font-weight:600;
+
+    color:#475569;
+}
+
+
+/* =========================
+   CONTROL
+========================= */
+
+.policy-control{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    flex-wrap:wrap;
+}
+
+
+/* =========================
+   INPUT
+========================= */
+
+.policy-input,
+.policy-select{
+
+    width:320px;
+
+    height:46px;
+
+    border:1px solid #dbe3ee;
+
+    border-radius:14px;
+
+    background:#fff;
+
+    padding:0 16px;
+
+    font-size:14px;
+
+    color:#0f172a;
+
+    outline:none;
+
+    transition:0.25s ease;
+}
+
+.policy-input:focus,
+.policy-select:focus{
+
+    border-color:#2563eb;
+
+    box-shadow:
+        0 0 0 4px rgba(37,99,235,0.10);
+}
+
+
+/* =========================
+   SELECT
+========================= */
+
+.policy-select{
+
+    appearance:none;
+
+    cursor:pointer;
+
+    padding-right:42px;
+
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+
+    background-repeat:no-repeat;
+
+    background-position:right 14px center;
+
+    background-size:14px;
+}
+
+
+/* =========================
+   SMALL SELECT
+========================= */
+
+.small-select{
+    width:90px;
+}
+
+
+/* =========================
+   LARGE INPUT
+========================= */
+
+.large-input{
+    width:420px;
+}
+
+
+/* =========================
+   RANGE
+========================= */
+
+.range-control span{
+
+    font-size:15px;
+
+    color:#64748b;
+
+    font-weight:600;
+}
+
+.small-input{
+
+    width:110px !important;
+}
+
+
+/* =========================
+   RADIO
+========================= */
+
+.policy-control label{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    font-size:14px;
+
+    color:#334155;
+}
+
+
+/* =========================
+   SUMMARY BUTTON
+========================= */
+
+.summary-btn{
+
+    border:none;
+
+    background:#f1f5f9;
+
+    color:#0f172a;
+
+    height:42px;
+
+    padding:0 18px;
+
+    border-radius:12px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:0.25s ease;
+}
+
+.summary-btn:hover{
+
+    background:#e2e8f0;
+}
