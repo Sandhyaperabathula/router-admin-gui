@@ -57,8 +57,9 @@
                 <ul class="submenu">
                     <li class="submenu-item"><a href="${basePath}cgi-bin/wan-settings.html" class="submenu-link">WAN Settings</a></li>
                     <li class="submenu-item"><a href="${basePath}cgi-bin/lan-settings.html" class="submenu-link">LAN Settings</a></li>
-                    <li class="submenu-item"><a href="#" class="submenu-link">NAT Configuration</a></li>
-                    <li class="submenu-item"><a href="#" class="submenu-link">Parental Control</a></li>
+                    <li class="submenu-item"><a href="${basePath}cgi-bin/dynamic-dns.html" class="submenu-link">Dynamic DNS</a></li>
+                    <li class="submenu-item"><a href="${basePath}cgi-bin/route-settings.html" class="submenu-link">Route Settings</a></li>
+                    <li class="submenu-item"><a href="${basePath}cgi-bin/route-policy.html" class="submenu-link">Route Policy</a></li>
                 </ul>
             </li>
 

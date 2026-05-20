@@ -1,0 +1,218 @@
+/* =========================
+   TOP SECTION
+========================= */
+
+.wan-top-section{
+    margin-bottom:30px;
+}
+
+.wan-mode-box{
+    display:flex;
+    align-items:center;
+    gap:16px;
+    flex-wrap:wrap;
+}
+
+.wan-mode-box label{
+    font-size:15px;
+    font-weight:600;
+    color:#334155;
+}
+
+.wan-select{
+    min-width:260px;
+    padding:14px 45px 14px 18px;
+    border-radius:14px;
+    border:1px solid #dbe3ee;
+    background:#fff;
+
+    font-size:15px;
+    color:#0f172a;
+
+    outline:none;
+    cursor:pointer;
+
+    appearance:none;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%23475569' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+
+    background-repeat:no-repeat;
+    background-position:right 16px center;
+    background-size:16px;
+    padding:14px 32px 14px 18px;
+background-position:right 10px center;
+}
+
+.wan-select:focus{
+    border-color:#2563eb;
+    box-shadow:
+        0 0 0 4px rgba(37,99,235,0.10);
+}
+
+
+/* =========================
+   OVERVIEW
+========================= */
+
+.overview-section{
+    margin-top:10px;
+}
+
+.overview-title{
+    font-size:20px;
+    font-weight:700;
+    color:#0f172a;
+    margin-bottom:18px;
+}
+
+
+/* =========================
+   TABLE
+========================= */
+
+.wan-table{
+    width:100%;
+    border-collapse:collapse;
+    background:#fff;
+    border-radius:18px;
+    overflow:hidden;
+}
+
+.wan-table thead{
+    background:#f8fafc;
+}
+
+.wan-table th{
+    padding:16px;
+    border-bottom:1px solid #e2e8f0;
+    font-size:14px;
+    font-weight:700;
+    color:#0f172a;
+    text-align:left;
+    white-space:nowrap;
+}
+
+.wan-table td{
+    padding:16px;
+    border-bottom:1px solid #edf2f7;
+    font-size:14px;
+    color:#475569;
+    white-space:nowrap;
+}
+
+.wan-table tbody tr{
+    transition:0.25s ease;
+}
+
+.wan-table tbody tr:hover{
+    background:#f8fbff;
+}
+
+
+/* =========================
+   STATUS
+========================= */
+
+.status-badge{
+    padding:7px 12px;
+    border-radius:999px;
+    font-size:13px;
+    font-weight:600;
+}
+
+.connected{
+    background:#dcfce7;
+    color:#15803d;
+}
+
+.route-check{
+    color:#2563eb;
+    font-size:18px;
+    font-weight:700;
+    padding-left:30px;
+}
+
+.nat-enabled{
+    color:#2563eb;
+    font-weight:600;
+}
+
+
+/* =========================
+   ACTION BUTTONS
+========================= */
+
+.action-buttons{
+    display:flex;
+    gap:10px;
+}
+
+.table-btn{
+    border:none;
+    padding:8px 14px;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:13px;
+    font-weight:600;
+    transition:0.3s ease;
+}
+
+
+/* RENEW */
+
+.renew-btn{
+    background:#dbeafe;
+    color:#2563eb;
+}
+
+.renew-btn:hover{
+    background:#bfdbfe;
+}
+
+
+/* RELEASE */
+
+.release-btn{
+    background:#fee2e2;
+    color:#dc2626;
+}
+
+.release-btn:hover{
+    background:#fecaca;
+}
+
+
+/* EDIT */
+
+.edit-btn{
+    background:#f1f5f9;
+    color:#0f172a;
+}
+
+.edit-btn:hover{
+    background:#e2e8f0;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+.table-responsive{
+    overflow-x:auto;
+}
+
+@media(max-width:992px){
+
+    .wan-table{
+        min-width:1200px;
+    }
+
+}
+
+.actions{
+    text-align:right;
+    padding-left:30px;
+}

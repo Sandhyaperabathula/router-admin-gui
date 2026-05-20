@@ -4,83 +4,549 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LAN Settings - S136AN</title>
+
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/lan-settings.css">
+    <link rel="stylesheet" href="../css/lan.css">
 </head>
+
 <body>
-    <div class="main-wrapper">
-        <main class="content-area">
-            <div class="container-fluid">
-                <div class="breadcrumb">
-                    <a href="index.html">Home</a>
-                    <span>/</span>
-                    <span>Configuration</span>
-                    <span>/</span>
-                    <span>Advanced Setup</span>
-                    <span>/</span>
-                    <span>LAN Settings</span>
-                </div>
 
-                <h1 class="page-title">Local Area Network (LAN)</h1>
-                <p class="text-muted mb-4">Configure your local network and DHCP server settings.</p>
+<div class="main-wrapper">
 
-                <div class="grid grid-cols-1">
-                    <!-- LAN IP Settings -->
-                    <div class="card">
-                        <div class="card-header">
-                            <h2 class="card-title">LAN IP Configuration</h2>
-                        </div>
-                        <div class="grid grid-cols-2">
-                            <div class="form-group">
-                                <label class="form-label">IP Address</label>
-                                <input type="text" class="form-control" value="192.168.1.1">
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">Subnet Mask</label>
-                                <input type="text" class="form-control" value="255.255.255.0">
-                            </div>
-                        </div>
-                    </div>
+    <main class="content-area">
 
-                    <!-- DHCP Server Settings -->
-                    <div class="card">
-                        <div class="card-header">
-                            <h2 class="card-title">DHCP Server Settings</h2>
-                            <label class="switch">
-                                <input type="checkbox" checked>
-                                <span class="slider"></span>
-                            </label>
-                        </div>
-                        <div class="grid grid-cols-2">
-                            <div class="form-group">
-                                <label class="form-label">Start IP Address</label>
-                                <input type="text" class="form-control" value="192.168.1.2">
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">End IP Address</label>
-                                <input type="text" class="form-control" value="192.168.1.254">
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">Lease Time (minutes)</label>
-                                <input type="number" class="form-control" value="1440">
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">Domain Name</label>
-                                <input type="text" class="form-control" placeholder="gateway.local">
-                            </div>
-                        </div>
-                    </div>
+        <div class="container-fluid">
 
-                    <div class="flex justify-end gap-2">
-                        <button class="btn btn-outline">Discard</button>
-                        <button class="btn btn-primary">Apply Settings</button>
-                    </div>
-                </div>
+            <!-- BREADCRUMB -->
+            <div class="breadcrumb">
+                <a href="index.html">Home</a>
+                <span>/</span>
+                <span>Network</span>
+                <span>/</span>
+                <span>LAN Settings</span>
             </div>
-        </main>
+
+
+            <!-- CARD -->
+            <div class="card lan-card">
+
+                <!-- HEADER -->
+                <div class="card-header">
+
+                    <div>
+                        <h2 class="card-title">
+                            LAN Settings
+                        </h2>
+
+                        <p class="card-subtitle">
+                            Configure local network and DHCP settings
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <!-- ROUTER LOCAL IP -->
+            <div class="lan-page">
+
+    <!-- ROUTER LOCAL IP -->
+    <div class="settings-section">
+
+        <h3 class="section-title">
+            Router Local IP
+        </h3>
+
+        <div class="form-row">
+
+            <label>
+                IP Address :
+            </label>
+
+            <input type="text" value="192.168.55.1">
+
+        </div>
+
+        <div class="form-row">
+
+            <label>
+                IP Subnet Mask :
+            </label>
+
+            <input type="text" value="255.255.255.0">
+
+        </div>
+
     </div>
 
-    <!-- JS Files -->
-    <script src="../js/sidebar.js"></script>
-    <script src="../js/navbar.js"></script>
+
+
+    <!-- ETHERNET -->
+    <div class="settings-section">
+
+        <h3 class="section-title">
+            Ethernet Port Configure
+        </h3>
+
+
+        <!-- PORT 1 -->
+        <div class="port-row">
+
+            <span class="port-name">
+                Ethernet Port1 :
+            </span>
+
+            <label>
+                <input type="radio" name="port1" checked>
+                Enabled
+            </label>
+
+            <label>
+                <input type="radio" name="port1">
+                Disabled
+            </label>
+
+            <span class="speed-label">
+                Speed Mode
+            </span>
+
+            <select class="custom-select">
+                <option>Auto/Auto</option>
+            </select>
+
+        </div>
+
+
+        <!-- PORT 2 -->
+        <div class="port-row">
+
+            <span class="port-name">
+                Ethernet Port2 :
+            </span>
+
+            <label>
+                <input type="radio" name="port2" checked>
+                Enabled
+            </label>
+
+            <label>
+                <input type="radio" name="port2">
+                Disabled
+            </label>
+
+            <span class="speed-label">
+                Speed Mode
+            </span>
+
+            <select class="custom-select">
+                <option>Auto/Auto</option>
+            </select>
+
+        </div>
+
+
+        <!-- PORT 3 -->
+        <div class="port-row">
+
+            <span class="port-name">
+                Ethernet Port3 :
+            </span>
+
+            <label>
+                <input type="radio" name="port3" checked>
+                Enabled
+            </label>
+
+            <label>
+                <input type="radio" name="port3">
+                Disabled
+            </label>
+
+            <span class="speed-label">
+                Speed Mode
+            </span>
+
+            <select class="custom-select">
+                <option>Auto/Auto</option>
+            </select>
+
+        </div>
+
+
+        <!-- BRIDGE -->
+        <div class="port-row">
+
+            <span class="port-name">
+                Port Bridge :
+            </span>
+
+            <label>
+                <input type="radio" name="bridge" checked>
+                Enabled
+            </label>
+
+            <label>
+                <input type="radio" name="bridge">
+                Disabled
+            </label>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- MULTICAST -->
+    <div class="settings-section">
+
+        <h3 class="section-title">
+            Upstream Multicast Configure per Port
+        </h3>
+
+
+        <div class="port-row">
+
+            <span class="port-name">
+                Ethernet Port1 :
+            </span>
+
+            <label>
+                <input type="radio" name="multi1">
+                Enabled
+            </label>
+
+            <label>
+                <input type="radio" name="multi1" checked>
+                Disabled
+            </label>
+
+        </div>
+
+
+        <div class="port-row">
+
+            <span class="port-name">
+                Ethernet Port2 :
+            </span>
+
+            <label>
+                <input type="radio" name="multi2">
+                Enabled
+            </label>
+
+            <label>
+                <input type="radio" name="multi2" checked>
+                Disabled
+            </label>
+
+        </div>
+
+
+        <div class="port-row">
+
+            <span class="port-name">
+                Ethernet Port3 :
+            </span>
+
+            <label>
+                <input type="radio" name="multi3">
+                Enabled
+            </label>
+
+            <label>
+                <input type="radio" name="multi3" checked>
+                Disabled
+            </label>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- DHCP -->
+    <div class="settings-section">
+
+        <h3 class="section-title">
+            DHCP
+        </h3>
+
+
+        <div class="port-row">
+
+            <span class="port-name">
+                DHCP :
+            </span>
+
+            <label>
+                <input type="radio" name="dhcp">
+                Disabled
+            </label>
+
+            <label>
+                <input type="radio" name="dhcp" checked>
+                Enabled
+            </label>
+
+        </div>
+
+
+        <div class="form-inline">
+
+            <label>
+                Main Pool :
+            </label>
+
+            <span>Start IP</span>
+
+            <input 
+                type="text"
+                value="192.168.55.101">
+
+            <span>End IP</span>
+
+            <input 
+                type="text"
+                value="192.168.55.252">
+
+        </div>
+
+
+        <div class="form-inline">
+
+            <label>
+                Lease Time :
+            </label>
+
+            <input 
+                type="text"
+                value="3600">
+
+            <span>
+                seconds(900~259200,default:3600s)
+            </span>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- DNS -->
+    <div class="settings-section">
+
+        <h3 class="section-title">
+            DNS
+        </h3>
+
+
+        <div class="port-row">
+
+            <span class="port-name">
+                DNS Mode :
+            </span>
+
+            <label>
+                <input type="radio" name="dns" checked>
+                Automatically
+            </label>
+
+            <label>
+                <input type="radio" name="dns">
+                Manually
+            </label>
+
+        </div>
+
+
+        <div class="form-row">
+
+            <label>
+                Primary DNS :
+            </label>
+
+            <input type="text" value="8.8.8.8">
+
+        </div>
+
+
+        <div class="form-row">
+
+            <label>
+                Secondary DNS :
+            </label>
+
+            <input type="text" value="8.8.4.4">
+
+        </div>
+
+
+        <div class="form-row">
+
+            <label>
+                Default DNS Interface :
+            </label>
+
+            <select class="custom-select">
+                <option>None</option>
+            </select>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- DHCP RESERVATION -->
+    <div class="settings-section">
+
+        <h3 class="section-title">
+            Add DHCP Reservation
+        </h3>
+
+
+        <div class="reservation-row">
+
+            <div class="form-inline">
+
+                <label>
+                    IP Address :
+                </label>
+
+                <input type="text">
+
+            </div>
+
+
+            <div class="form-inline">
+
+                <label>
+                    MAC Address :
+                </label>
+
+                <input type="text">
+
+            </div>
+
+
+            <button class="add-btn">
+                ADD
+            </button>
+
+        </div>
+
+
+        <table class="reservation-table">
+
+            <thead>
+
+                <tr>
+                    <th>Index</th>
+                    <th>IP</th>
+                    <th>MAC</th>
+                    <th>Drop</th>
+                </tr>
+
+            </thead>
+
+        </table>
+
+    </div>
+
+
+
+    <!-- IPV6 -->
+    <div class="settings-section">
+
+        <h3 class="section-title">
+            IPv6 Address
+        </h3>
+
+        <div class="form-inline">
+
+            <label>
+                IPv6 Global Address :
+            </label>
+
+            <input type="text">
+
+            <span>/</span>
+
+            <input 
+                type="text"
+                class="small-input">
+
+        </div>
+
+    </div>
+
+
+
+    <!-- DHCPv6 -->
+    <div class="settings-section">
+
+        <h3 class="section-title">
+            DHCPv6
+        </h3>
+
+
+        <div class="port-row">
+
+            <span class="port-name">
+                DHCP6 Server :
+            </span>
+
+            <label>
+                <input type="radio" name="dhcp6">
+                Disable
+            </label>
+
+            <label>
+                <input type="radio" name="dhcp6" checked>
+                Enable
+            </label>
+
+        </div>
+
+
+        <div class="port-row">
+
+            <span class="port-name">
+                DHCP6 Mode :
+            </span>
+
+            <label>
+                <input type="radio" name="dhcp6mode" checked>
+                Auto
+            </label>
+
+            <label>
+                <input type="radio" name="dhcp6mode">
+                Manual
+            </label>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- BUTTON -->
+    <div class="settings-actions">
+
+        <button class="apply-btn">
+            Apply
+        </button>
+
+    </div>
+
+</div>
+    </main>
+
+</div>
+
+<script src="../js/sidebar.js"></script>
+<script src="../js/navbar.js"></script>
+
 </body>
 </html>

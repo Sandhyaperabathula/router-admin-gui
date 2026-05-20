@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAN Settings - S136AN</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    
+    <link rel="stylesheet" href="../css/lan.css">
+    <link rel="stylesheet" href="../css/route.css">
+</head>
+
+<body>
+
+<div class="main-wrapper">
+
+    <main class="content-area">
+
+        <div class="container-fluid">
+
+            <!-- BREADCRUMB -->
+            <div class="breadcrumb">
+                <a href="index.html">Home</a>
+                <span>/</span>
+                <span>Network</span>
+                <span>/</span>
+                <span>Dynamic DNS Settings</span>
+            </div>
+
+<div class="settings-section">
+
+    <!-- TITLE -->
+    <h3 class="section-title">
+        Static Route
+    </h3>
+
+
+    <!-- TABLE -->
+    <div class="table-responsive">
+
+        <table class="route-table">
+
+            <thead>
+
+                <tr>
+
+                    <th>
+                        Destination IP Address
+                    </th>
+
+                    <th>
+                        IP Subnet Mask
+                    </th>
+
+                    <th>
+                        Gateway IP Address
+                    </th>
+
+                    <th>
+                        Metric
+                    </th>
+
+                    <th>
+                        Interface
+                    </th>
+
+                    <th>
+                        Static Route
+                    </th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody>
+
+                <!-- ROW 1 -->
+                <tr>
+
+                    <td>
+                        <input 
+                            type="text"
+                            class="route-input">
+                    </td>
+
+                    <td>
+
+                        <select class="route-select">
+
+                            <option>
+                                255.255.255.255
+                            </option>
+
+                        </select>
+
+                    </td>
+
+                    <td>
+                        <input 
+                            type="text"
+                            class="route-input">
+                    </td>
+
+                    <td>
+                        <input 
+                            type="text"
+                            class="metric-input">
+                    </td>
+
+                    <td>
+
+                        <select class="route-select">
+
+                            <option>
+                                WAN0
+                            </option>
+
+                        </select>
+
+                    </td>
+
+                    <td>
+
+                        <select class="route-select">
+
+                            <option>
+                                Deactivated
+                            </option>
+
+                            <option>
+                                Activated
+                            </option>
+
+                        </select>
+
+                    </td>
+
+                </tr>
+
+
+
+                <!-- COPY SAME ROWS -->
+                <tr>
+
+                    <td><input type="text" class="route-input"></td>
+
+                    <td>
+                        <select class="route-select">
+                            <option>255.255.255.255</option>
+                        </select>
+                    </td>
+
+                    <td><input type="text" class="route-input"></td>
+
+                    <td><input type="text" class="metric-input"></td>
+
+                    <td>
+                        <select class="route-select">
+                            <option>WAN0</option>
+                        </select>
+                    </td>
+
+                    <td>
+                        <select class="route-select">
+                            <option>Deactivated</option>
+                            <option>Activated</option>
+                        </select>
+                    </td>
+
+                </tr>
+
+
+
+                <tr>
+
+                    <td><input type="text" class="route-input"></td>
+
+                    <td>
+                        <select class="route-select">
+                            <option>255.255.255.255</option>
+                        </select>
+                    </td>
+
+                    <td><input type="text" class="route-input"></td>
+
+                    <td><input type="text" class="metric-input"></td>
+
+                    <td>
+                        <select class="route-select">
+                            <option>WAN0</option>
+                        </select>
+                    </td>
+
+                    <td>
+                        <select class="route-select">
+                            <option>Deactivated</option>
+                            <option>Activated</option>
+                        </select>
+                    </td>
+
+                </tr>
+
+
+
+                <tr>
+
+                    <td><input type="text" class="route-input"></td>
+
+                    <td>
+                        <select class="route-select">
+                            <option>255.255.255.255</option>
+                        </select>
+                    </td>
+
+                    <td><input type="text" class="route-input"></td>
+
+                    <td><input type="text" class="metric-input"></td>
+
+                    <td>
+                        <select class="route-select">
+                            <option>WAN0</option>
+                        </select>
+                    </td>
+
+                    <td>
+                        <select class="route-select">
+                            <option>Deactivated</option>
+                            <option>Activated</option>
+                        </select>
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+
+    <!-- BUTTON -->
+    <div class="settings-actions">
+
+        <button class="apply-btn">
+            Apply
+        </button>
+
+    </div>
+
+</div>
+</div>
+    </main>
+
+</div>
+
+<script src="../js/sidebar.js"></script>
+<script src="../js/navbar.js"></script>
+
+</body>
+</html>

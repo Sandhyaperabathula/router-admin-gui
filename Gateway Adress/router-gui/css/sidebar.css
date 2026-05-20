@@ -178,3 +178,10 @@
         display: block;
     }
 }
+
+.sidebar,
+.submenu,
+.menu-link {
+    transition: all 0.25s ease;
+    will-change: transform;
+}

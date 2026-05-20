@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAN Settings - S136AN</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    
+    <link rel="stylesheet" href="../css/lan.css">
+    <link rel="stylesheet" href="../css/route-policy.css">
+</head>
+
+<body>
+
+<div class="main-wrapper">
+
+    <main class="content-area">
+
+        <div class="container-fluid">
+
+            <!-- BREADCRUMB -->
+            <div class="breadcrumb">
+                <a href="index.html">Home</a>
+                <span>/</span>
+                <span>Network</span>
+                <span>/</span>
+                <span>Dynamic DNS Settings</span>
+            </div>
+
+<div class="lan-page">
+
+    <!-- IP SECTION -->
+    <div class="settings-section">
+
+        <h3 class="section-title">
+            IP
+        </h3>
+
+
+        <!-- TOP ACTION -->
+        <div class="top-action-row">
+
+            <div class="action-group">
+
+                <label>
+                    Index :
+                </label>
+
+                <select class="policy-select small-select">
+
+                    <option>
+                        1
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <button class="summary-btn">
+                Summary
+            </button>
+
+        </div>
+
+
+        <!-- ACTIVE -->
+        <div class="policy-row">
+
+            <div class="policy-label">
+                Active :
+            </div>
+
+            <div class="policy-control">
+
+                <label>
+                    <input type="radio" name="ipactive">
+                    Yes
+                </label>
+
+                <label>
+                    <input type="radio" name="ipactive" checked>
+                    No
+                </label>
+
+            </div>
+
+        </div>
+
+
+        <!-- SOURCE MAC -->
+        <div class="policy-row">
+
+            <div class="policy-label">
+                Source MAC :
+            </div>
+
+            <div class="policy-control">
+
+                <input 
+                    type="text"
+                    class="policy-input">
+
+            </div>
+
+        </div>
+
+
+        <!-- SOURCE IP -->
+        <div class="policy-row">
+
+            <div class="policy-label">
+                Source IP Address :
+            </div>
+
+            <div class="policy-control">
+
+                <input 
+                    type="text"
+                    class="policy-input">
+
+            </div>
+
+        </div>
+
+
+        <!-- SOURCE MASK -->
+        <div class="policy-row">
+
+            <div class="policy-label">
+                Mask :
+            </div>
+
+            <div class="policy-control">
+
+                <input 
+                    type="text"
+                    class="policy-input">
+
+            </div>
+
+        </div>
+
+
+        <!-- DESTINATION IP -->
+        <div class="policy-row">
+
+            <div class="policy-label">
+                Dst IP Address :
+            </div>
+
+            <div class="policy-control">
+
+                <input 
+                    type="text"
+                    class="policy-input">
+
+            </div>
+
+        </div>
+
+
+        <!-- DESTINATION MASK -->
+        <div class="policy-row">
+
+            <div class="policy-label">
+                Mask :
+            </div>
+
+            <div class="policy-control">
+
+                <input 
+                    type="text"
+                    class="policy-input">
+
+            </div>
+
+        </div>
+
+
+        <!-- ETHERTYPE -->
+        <div class="policy-row">
+
+            <div class="policy-label">
+                Ethertype :
+            </div>
+
+            <div class="policy-control">
+
+                <select class="policy-select">
+
+                    <option>
+                    </option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+
+        <!-- PROTOCOL -->
+        <div class="policy-row">
+
+            <div class="policy-label">
+                Protocol :
+            </div>
+
+            <div class="policy-control">
+
+                <select class="policy-select">
+
+                    <option>
+                    </option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+
+        <!-- SOURCE PORT -->
+        <div class="policy-row">
+
+            <div class="policy-label">
+                Source Port Range :
+            </div>
+
+            <div class="policy-control range-control">
+
+                <input 
+                    type="text"
+                    class="small-input">
+
+                <span>~</span>
+
+                <input 
+                    type="text"
+                    class="small-input">
+
+            </div>
+
+        </div>
+
+
+        <!-- DESTINATION PORT -->
+        <div class="policy-row">
+
+            <div class="policy-label">
+                Destination Port Range :
+            </div>
+
+            <div class="policy-control range-control">
+
+                <input 
+                    type="text"
+                    class="small-input">
+
+                <span>~</span>
+
+                <input 
+                    type="text"
+                    class="small-input">
+
+            </div>
+
+        </div>
+
+
+        <!-- INTERFACE -->
+        <div class="policy-row">
+
+            <div class="policy-label">
+                Interface :
+            </div>
+
+            <div class="policy-control">
+
+                <select class="policy-select">
+
+                    <option>
+                        WAN0
+                    </option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- URL SECTION -->
+    <div class="settings-section">
+
+        <h3 class="section-title">
+            URL
+        </h3>
+
+
+        <!-- TOP ACTION -->
+        <div class="top-action-row">
+
+            <div class="action-group">
+
+                <label>
+                    Index :
+                </label>
+
+                <select class="policy-select small-select">
+
+                    <option>
+                        1
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <button class="summary-btn">
+                Summary
+            </button>
+
+        </div>
+
+
+        <!-- ACTIVE -->
+        <div class="policy-row">
+
+            <div class="policy-label">
+                Active :
+            </div>
+
+            <div class="policy-control">
+
+                <label>
+                    <input type="radio" name="urlactive">
+                    Yes
+                </label>
+
+                <label>
+                    <input type="radio" name="urlactive" checked>
+                    No
+                </label>
+
+            </div>
+
+        </div>
+
+
+        <!-- DOMAIN -->
+        <div class="policy-row">
+
+            <div class="policy-label">
+                Domain Name :
+            </div>
+
+            <div class="policy-control">
+
+                <input 
+                    type="text"
+                    class="policy-input large-input">
+
+            </div>
+
+        </div>
+
+
+        <!-- INTERFACE -->
+        <div class="policy-row">
+
+            <div class="policy-label">
+                Interface :
+            </div>
+
+            <div class="policy-control">
+
+                <select class="policy-select">
+
+                    <option>
+                        WAN0
+                    </option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+
+        <!-- MASK -->
+        <div class="policy-row">
+
+            <div class="policy-label">
+                Mask :
+            </div>
+
+            <div class="policy-control">
+
+                <select class="policy-select">
+
+                    <option>
+                        255.255.255.255
+                    </option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- BUTTON -->
+    <div class="settings-actions">
+
+        <button class="apply-btn">
+            Apply
+        </button>
+
+    </div>
+
+</div>
+</div>
+    </main>
+
+</div>
+
+<script src="../js/sidebar.js"></script>
+<script src="../js/navbar.js"></script>
+
+</body>
+</html>

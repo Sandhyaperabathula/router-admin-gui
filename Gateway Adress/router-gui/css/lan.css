@@ -1,0 +1,482 @@
+/* =========================
+   PAGE LAYOUT
+========================= */
+
+.lan-page{
+    display:flex;
+    flex-direction:column;
+    gap:26px;
+}
+
+
+/* =========================
+   SECTION CARD
+========================= */
+
+.settings-section{
+
+    background:rgba(255,255,255,0.92);
+
+    backdrop-filter:blur(14px);
+
+    border:1px solid rgba(255,255,255,0.20);
+
+    border-radius:24px;
+
+    padding:30px;
+
+    box-shadow:
+        0 10px 30px rgba(15,23,42,0.05);
+
+    transition:0.3s ease;
+}
+
+.settings-section:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 16px 34px rgba(15,23,42,0.08);
+
+}
+
+
+/* =========================
+   SECTION TITLE
+========================= */
+
+.section-title{
+
+    font-size:20px;
+
+    font-weight:700;
+
+    color:#0f172a;
+
+    margin-bottom:28px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    letter-spacing:-0.3px;
+}
+
+.section-title::before{
+
+    content:"";
+
+    width:10px;
+    height:10px;
+
+    border-radius:50%;
+
+    background:#2563eb;
+
+    box-shadow:
+        0 0 0 6px rgba(37,99,235,0.10);
+
+}
+
+
+/* =========================
+   FORM ROW
+========================= */
+
+.form-row{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:24px;
+
+    margin-bottom:20px;
+}
+
+
+/* =========================
+   LABELS
+========================= */
+
+.form-row label,
+.form-inline label,
+.port-name{
+
+    width:220px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    color:#475569;
+
+    flex-shrink:0;
+}
+
+
+/* =========================
+   INPUTS
+========================= */
+
+.form-row input,
+.form-inline input,
+.custom-select{
+
+    width:320px;
+
+    height:46px;
+
+    padding:0 16px;
+
+    border-radius:14px;
+
+    border:1px solid #dbe3ee;
+
+    background:#ffffff;
+
+    font-size:14px;
+
+    color:#0f172a;
+
+    outline:none;
+
+    transition:0.25s ease;
+}
+
+.form-row input:focus,
+.form-inline input:focus,
+.custom-select:focus{
+
+    border-color:#2563eb;
+
+    box-shadow:
+        0 0 0 4px rgba(37,99,235,0.10);
+
+}
+
+
+/* =========================
+   SELECT
+========================= */
+
+.custom-select{
+
+    appearance:none;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+
+    cursor:pointer;
+
+    padding-right:42px;
+
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+
+    background-repeat:no-repeat;
+
+    background-position:right 14px center;
+
+    background-size:14px;
+}
+
+
+/* =========================
+   PORT ROW
+========================= */
+
+.port-row{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+    padding:18px 0;
+
+    border-bottom:1px solid #edf2f7;
+
+    flex-wrap:wrap;
+}
+
+.port-row:last-child{
+    border-bottom:none;
+}
+
+
+/* =========================
+   RADIO LABEL
+========================= */
+
+.port-row label{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    min-width:90px;
+
+    font-size:14px;
+
+    color:#334155;
+}
+
+
+/* =========================
+   INLINE ROW
+========================= */
+
+.form-inline{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    margin-top:18px;
+
+    flex-wrap:wrap;
+}
+
+.form-inline span{
+
+    font-size:14px;
+
+    color:#64748b;
+}
+
+
+/* =========================
+   SMALL INPUT
+========================= */
+
+.small-input{
+    width:90px !important;
+}
+
+
+/* =========================
+   RESERVATION ROW
+========================= */
+
+.reservation-row{
+
+    display:flex;
+
+    align-items:flex-end;
+
+    gap:18px;
+
+    flex-wrap:wrap;
+
+    margin-bottom:24px;
+}
+
+
+/* =========================
+   TABLE
+========================= */
+
+.table-responsive{
+    overflow-x:auto;
+}
+
+.reservation-table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    overflow:hidden;
+
+    border-radius:18px;
+
+    border:1px solid #e2e8f0;
+
+    background:#fff;
+}
+
+.reservation-table thead{
+
+    background:#f8fafc;
+}
+
+.reservation-table th{
+
+    padding:16px;
+
+    text-align:left;
+
+    font-size:14px;
+
+    font-weight:700;
+
+    color:#0f172a;
+
+    border-bottom:1px solid #e2e8f0;
+}
+
+.reservation-table td{
+
+    padding:16px;
+
+    font-size:14px;
+
+    color:#475569;
+
+    border-bottom:1px solid #edf2f7;
+}
+
+.reservation-table tbody tr:hover{
+
+    background:#f8fbff;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.settings-actions{
+
+    display:flex;
+
+    justify-content:center;
+
+    margin-top:36px;
+}
+
+.apply-btn,
+.add-btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border:none;
+
+    background:linear-gradient(
+        135deg,
+        #2563eb,
+        #1d4ed8
+    );
+
+    color:#ffffff;
+
+    height:44px;
+
+    padding:0 24px;
+
+    border-radius:12px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:all 0.25s ease;
+
+    box-shadow:
+        0 8px 18px rgba(37,99,235,0.20);
+
+}
+
+.apply-btn{
+
+    min-width:130px;
+}
+
+.add-btn{
+
+    min-width:90px;
+}
+
+
+/* HOVER */
+
+.apply-btn:hover,
+.add-btn:hover{
+
+    transform:translateY(-2px);
+
+    background:linear-gradient(
+        135deg,
+        #1d4ed8,
+        #1e40af
+    );
+
+    box-shadow:
+        0 12px 22px rgba(37,99,235,0.28);
+
+}
+
+
+/* ACTIVE */
+
+.apply-btn:active,
+.add-btn:active{
+
+    transform:scale(0.98);
+
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:992px){
+
+    .form-row{
+        flex-wrap:wrap;
+    }
+
+}
+
+@media(max-width:768px){
+
+    .settings-section{
+        padding:22px;
+    }
+
+    .section-title{
+        font-size:18px;
+    }
+
+    .form-row{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:10px;
+    }
+
+    .form-row label,
+    .port-name{
+
+        width:100%;
+    }
+
+    .form-row input,
+    .custom-select{
+
+        width:100%;
+    }
+
+    .reservation-row{
+
+        flex-direction:column;
+
+        align-items:stretch;
+    }
+
+}
